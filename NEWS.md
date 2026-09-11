@@ -1,3 +1,23 @@
+# mx.api 0.3.1
+
+* Patch release collecting the room-creation and cross-signing transport
+  additions from 0.3.0.1 and 0.3.0.2 below. No code changes since 0.3.0.2.
+
+# mx.api 0.3.0.2
+
+* New: `mx_keys_device_signing_upload()` publishes Matrix master,
+  self-signing, and user-signing keys with explicit UIA passthrough.
+* New: `mx_keys_signatures_upload()` publishes signatures over device and
+  cross-signing key objects.
+
+# mx.api 0.3.0.1
+
+* `mx_room_create()` gains `creation_content`, merged into the
+  `m.room.create` event. This is the only way to set properties fixed at
+  creation and immutable afterwards -- notably `type = "m.space"`, which
+  makes the room a space. A space cannot be converted from an ordinary
+  room later, so it has to be requested at creation or not at all.
+
 # mx.api 0.3.0
 
 * Generic room-event and state plumbing: `mx_send_event()` sends any
